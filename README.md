@@ -56,12 +56,21 @@ services:
       DISCORD_TOKEN: ${DISCORD_TOKEN:?}
       IMAGE_PATH: /app/dekachichibato.jpg
     volumes:
-      - ./dekachichibato.jpg:/app/dekachichibato.jpg:ro
+      - type: bind
+        source: ./dekachichibato.jpg
+        target: /app/dekachichibato.jpg
+        read_only: true
+        bind:
+          create_host_path: false
 ```
 
 ```bash
 DISCORD_TOKEN=xxx docker compose up -d
 ```
+
+`create_host_path: false` にしているのは、ホスト側に画像が無いときに Docker が
+同名の空ディレクトリを作ってマウントしてしまい、起動後に `EISDIR` で落ちるのを防ぐため。
+この指定があるとパスを間違えた時点で `docker compose up` が失敗する。
 
 amd64 / arm64 両対応なので、Oracle Cloud A1 などの arm でもそのまま動く。
 
