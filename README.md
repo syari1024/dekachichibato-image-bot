@@ -24,11 +24,11 @@ https://discord.com/oauth2/authorize?client_id=<DISCORD_CLIENT_ID>&scope=bot&per
 scope は `bot` のみ（スラッシュコマンドを使っていないので `applications.commands` は不要）。
 `permissions=101376` は以下の合計。
 
-| 権限 | 値 | 必要な理由 |
-| --- | --- | --- |
-| View Channels | 1024 | チャンネルのメッセージを受け取る |
-| Send Messages | 2048 | 返信を送る |
-| Attach Files | 32768 | 画像を添付する |
+| 権限                 | 値    | 必要な理由                                          |
+| -------------------- | ----- | --------------------------------------------------- |
+| View Channels        | 1024  | チャンネルのメッセージを受け取る                    |
+| Send Messages        | 2048  | 返信を送る                                          |
+| Attach Files         | 32768 | 画像を添付する                                      |
 | Read Message History | 65536 | 返信（message reference）の対象メッセージを参照する |
 
 ## 開発
@@ -83,10 +83,10 @@ git push --follow-tags
 
 ## 環境変数
 
-| 変数 | 必須 | 説明 |
-| --- | --- | --- |
-| `DISCORD_TOKEN` | ○ | Bot のトークン |
-| `IMAGE_PATH` | ○ | 返信に添付する画像のパス（デフォルトの `./image.png` は同梱していない） |
-| `DISCORD_CLIENT_ID` | | 招待 URL の生成に使う（コードからは未使用） |
+| 変数                | 必須 | 説明                                                                    |
+| ------------------- | ---- | ----------------------------------------------------------------------- |
+| `DISCORD_TOKEN`     | ○    | Bot のトークン                                                          |
+| `IMAGE_PATH`        | ○    | 返信に添付する画像のパス（デフォルトの `./image.png` は同梱していない） |
+| `DISCORD_CLIENT_ID` |      | 招待 URL の生成に使う（コードからは未使用）                             |
 
 画像は起動時に一度だけ読み込む。見つからなければその時点で起動に失敗する。
