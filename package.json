@@ -4,10 +4,11 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "typecheck": "bun check"
-  },
+  "dev": "bun --watch src/index.ts",
+  "start": "bun src/index.ts",
+  "typecheck": "bun check"
+},
   "devDependencies": {
-    "@biomejs/biome": "2.6.8",
     "@types/bun": "latest"
   },
   "dependencies": {
