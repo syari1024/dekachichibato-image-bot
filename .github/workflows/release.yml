@@ -18,6 +18,7 @@ jobs:
   image:
     needs: release
     strategy:
+      max-parallel: 1   # 同一パッケージの初回作成が競合して push が denied になるため直列
       matrix:
         include:
           - { runner: ubuntu-24.04, arch: amd64 }
