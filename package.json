@@ -1,15 +1,21 @@
 {
   "name": "dekachichibato-image-bot",
+  "version": "0.1.0",
   "module": "index.ts",
   "type": "module",
   "private": true,
   "scripts": {
+    "dev": "bun --watch src/index.ts",
+    "start": "bun src/index.ts",
     "typecheck": "bun check"
   },
   "devDependencies": {
     "@types/bun": "latest"
   },
-  "peerDependencies": {
-    "typescript": "^7"
+  "dependencies": {
+    "@discordjs/core": "^2.7.0",
+    "@discordjs/rest": "^2.6.3",
+    "@discordjs/ws": "^2.0.4",
+    "wanakana": "^5.3.1"
   }
 }
